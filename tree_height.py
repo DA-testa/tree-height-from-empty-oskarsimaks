@@ -18,7 +18,7 @@ def compute_height(sakne, liste):
 def main():
     
     # implement input form keyboard and from files
-    SRSLY = input()
+    TEST= input()
     decis = input()
     # print()
     if decis == "F":
@@ -35,8 +35,8 @@ def main():
                 sakne = i
             else:
                 liste[parents[i]].append(i)
-        print()
-        print(compute_height(sakne, liste),)
+
+        #print(compute_height(sakne, liste))
         t2 = time.time()
         #print(t2 - t1)
         #print()
@@ -53,13 +53,14 @@ def main():
                 sakne = i
             else:
                 liste[split_parents[i]].append(i)
-        print()
-        print(compute_height(sakne, liste),)
+        
+        #print(compute_height(sakne, liste))
         #print()
         t2 = time.time()
         #print(t2 - t1)
     else:
         return
+    print(compute_height(sakne, liste))
         # Lala
     # Printing answer, write your code here'
     # let user input file name to use, don't allow file names with letter a
