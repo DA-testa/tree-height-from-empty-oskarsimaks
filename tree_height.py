@@ -5,41 +5,54 @@ import threading
 import numpy
 
 
-def compute_height(n, parents):
+def compute_height(sakne, liste):
     # Write this function
-    max_height = 0
     # Your code here
-    arr = parents
-    # print(arr[0])
-    for i in range(n):
-        if int(arr[i]) != -1:
-            print(arr[i])
+    if not liste[sakne]:
+        return 1
+    else:
+        return 1 + max ([compute_height(berns, liste) for berns in liste[sakne]])
+    
 
-    return max_height
-
-
+#1
 def main():
     # implement input form keyboard and from files
-    decis = input("Input F or I \n")
+    decis = input()
     print()
     if decis == "F":
-        # file= open("./test/F0")
-        print("File")
-        # mismatch = find_mismatch(file)
-        # file.close()
+        file= input()
+        if "a" in file:
+            return
+        with open(f"./test/{file}", mode="r") as file:
+            n=int(file.readline())
+            parents = list(map(int, file.readline().split(" ")))
+        liste = [[] for i in range(n)]
+        for i in range(n):
+            if int(parents[i]) == -1:
+                sakne = i
+            else:
+                liste[parents[i]].append(i)
+
+        print(compute_height(sakne, liste))
+        
         
     elif decis == "I":
         n = int(input("Input n: "))
         parents = input("Input parents: ")
 
-        split_parents = parents.split(" ")
-        split_parents = list(map(int, split_parents))
+        split_parents = list(map(int, parents.split(" ")))
+        
+        liste = [[] for i in range(n)]
+        for i in range(n):
+            if split_parents[i] == -1:
+                sakne = i
+            else:
+                liste[split_parents[i]].append(i)
 
-        rez = compute_height(n, split_parents)
+        print(compute_height(sakne, liste))
     
     else:
-        print("Unknown command")
-    print()
+        return
 
     # Printing answer, write your code here'
     # let user input file name to use, don't allow file names with letter a
@@ -48,7 +61,7 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
-    pass
+    #pass
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
