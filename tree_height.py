@@ -1,5 +1,5 @@
 # python3
-
+import time
 import sys
 import threading
 import numpy
@@ -16,11 +16,14 @@ def compute_height(sakne, liste):
 
 #1
 def main():
+    
     # implement input form keyboard and from files
+    
     decis = input()
     # print()
     if decis == "F":
         file= input()
+        t1 = time.time()
         if "a" in file:
             return
         with open(f"./test/{file}", mode="r") as file:
@@ -34,12 +37,14 @@ def main():
                 liste[parents[i]].append(i)
 
         print(compute_height(sakne, liste))
+        t2 = time.time()
+        print(t2 - t1)
         print()
         
     elif decis == "I":
         n = int(input())
         parents = input()
-
+        t1 = time.time()
         split_parents = list(map(int, parents.split(" ")))
         
         liste = [[] for i in range(n)]
@@ -51,6 +56,8 @@ def main():
 
         print(compute_height(sakne, liste))
         print()
+        t2 = time.time()
+        print(t2 - t1)
     else:
         return
         #
