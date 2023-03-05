@@ -18,7 +18,7 @@ def compute_height(sakne, liste):
 def main():
     
     # implement input form keyboard and from files
-    blank = input()
+    SRSLY = input()
     decis = input()
     # print()
     if decis == "F":
@@ -39,7 +39,7 @@ def main():
         print(compute_height(sakne, liste),)
         t2 = time.time()
         #print(t2 - t1)
-        print()
+        #print()
         
     elif decis == "I":
         n = int(input())
@@ -55,7 +55,7 @@ def main():
                 liste[split_parents[i]].append(i)
 
         print(compute_height(sakne, liste),)
-        print()
+        #print()
         t2 = time.time()
         #print(t2 - t1)
     else:
