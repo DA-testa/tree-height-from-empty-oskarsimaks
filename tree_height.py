@@ -19,47 +19,47 @@ def main():
     
     # implement input form keyboard and from files
     
-    decis = input()
-    # print()
-    if decis == "F":
-        file= input()
-        t1 = time.time()
-        if "a" in file:
-            return
-        with open(f"./test/{file}", mode="r") as file:
-            n=int(file.readline())
-            parents = list(map(int, file.readline().split(" ")))
-        liste = [[] for i in range(n)]
-        for i in range(n):
-            if int(parents[i]) == -1:
-                sakne = i
-            else:
-                liste[parents[i]].append(i)
-
-        print(compute_height(sakne, liste),)
-        t2 = time.time()
-        #print(t2 - t1)
-        print()
-        
-    elif decis == "I":
-        n = int(input())
-        parents = input()
-        t1 = time.time()
-        split_parents = list(map(int, parents.split(" ")))
-        
-        liste = [[] for i in range(n)]
-        for i in range(n):
-            if split_parents[i] == -1:
-                sakne = i
-            else:
-                liste[split_parents[i]].append(i)
-
-        print(compute_height(sakne, liste),)
-        print()
-        t2 = time.time()
-        #print(t2 - t1)
-    else:
+    # decis = input()
+    # # print()
+    # if decis == "F":
+    file= input()
+    t1 = time.time()
+    if "a" in file:
         return
+    with open(f"./test/{file}", mode="r") as file:
+        n=int(file.readline())
+        parents = list(map(int, file.readline().split(" ")))
+    liste = [[] for i in range(n)]
+    for i in range(n):
+        if int(parents[i]) == -1:
+            sakne = i
+        else:
+            liste[parents[i]].append(i)
+
+    print(compute_height(sakne, liste),)
+    t2 = time.time()
+    #print(t2 - t1)
+    print()
+        
+    # elif decis == "I":
+    #     n = int(input())
+    #     parents = input()
+    #     t1 = time.time()
+    #     split_parents = list(map(int, parents.split(" ")))
+        
+    #     liste = [[] for i in range(n)]
+    #     for i in range(n):
+    #         if split_parents[i] == -1:
+    #             sakne = i
+    #         else:
+    #             liste[split_parents[i]].append(i)
+
+    #     print(compute_height(sakne, liste),)
+    #     print()
+    #     t2 = time.time()
+    #     #print(t2 - t1)
+    # else:
+    #     return
         #
     # Printing answer, write your code here'
     # let user input file name to use, don't allow file names with letter a
