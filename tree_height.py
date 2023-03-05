@@ -9,12 +9,39 @@ def compute_height(n, parents):
     # Write this function
     max_height = 0
     # Your code here
+    arr = parents
+    # print(arr[0])
+    for i in range(n):
+        if int(arr[i]) != -1:
+            print(arr[i])
+
     return max_height
 
 
 def main():
     # implement input form keyboard and from files
+    decis = input("Input F or I \n")
+    print()
+    if decis == "F":
+        # file= open("./test/F0")
+        print("File")
+        # mismatch = find_mismatch(file)
+        # file.close()
+        
+    elif decis == "I":
+        n = int(input("Input n: "))
+        parents = input("Input parents: ")
+
+        split_parents = parents.split(" ")
+        split_parents = list(map(int, split_parents))
+
+        rez = compute_height(n, split_parents)
     
+    else:
+        print("Unknown command")
+    print()
+
+    # Printing answer, write your code here'
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
@@ -29,5 +56,5 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
+# main()
 # print(numpy.array([1,2,3]))
