@@ -18,7 +18,7 @@ def compute_height(sakne, liste):
 def main():
     # implement input form keyboard and from files
     decis = input()
-    print()
+    #print()
     if decis == "F":
         file= input()
         if "a" in file:
