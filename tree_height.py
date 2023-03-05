@@ -11,8 +11,8 @@ def compute_height(sakne, liste):
     if not liste[sakne]:
         return 1
     else:
-        return 1 + max ([compute_height(berns) for berns in liste[sakne]])
-    return node
+        return 1 + max ([compute_height(berns, liste) for berns in liste[sakne]])
+    
 
 
 def main():
@@ -26,10 +26,9 @@ def main():
         with open(f"./test/{file}", mode="r") as file:
             n=int(file.readline())
             parents = list(map(int, file.readline().split))
-        arr = split_parents
         liste = [[] for i in range(n)]
         for i in range(n):
-            if int(arr[i]) == -1:
+            if int(parents[i]) == -1:
                 sakne = i
             else:
                 liste[parents[i]].append(i)
@@ -42,13 +41,13 @@ def main():
         parents = input("Input parents: ")
 
         split_parents = list(map(int, parents.split(" ")))
-        arr = split_parents
+        
         liste = [[] for i in range(n)]
         for i in range(n):
-            if int(arr[i]) == -1:
+            if split_parents[i] == -1:
                 sakne = i
             else:
-                liste[parents[i]].append(i)
+                liste[split_parents[i]].append(i)
 
         print(compute_height(sakne, liste))
     
