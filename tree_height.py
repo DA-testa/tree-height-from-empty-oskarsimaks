@@ -34,11 +34,11 @@ def main():
                 liste[parents[i]].append(i)
 
         print(compute_height(sakne, liste))
-        
+        print()
         
     elif decis == "I":
-        n = int(input("Input n: "))
-        parents = input("Input parents: ")
+        n = int(input())
+        parents = input()
 
         split_parents = list(map(int, parents.split(" ")))
         
@@ -50,7 +50,7 @@ def main():
                 liste[split_parents[i]].append(i)
 
         print(compute_height(sakne, liste))
-    
+        print()
     else:
         return
 
