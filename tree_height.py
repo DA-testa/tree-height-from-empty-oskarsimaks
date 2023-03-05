@@ -36,9 +36,9 @@ def main():
             else:
                 liste[parents[i]].append(i)
 
-        print(compute_height(sakne, liste))
+        print(compute_height(sakne, liste),)
         t2 = time.time()
-        print(t2 - t1)
+        #print(t2 - t1)
         print()
         
     elif decis == "I":
@@ -54,10 +54,10 @@ def main():
             else:
                 liste[split_parents[i]].append(i)
 
-        print(compute_height(sakne, liste))
+        print(compute_height(sakne, liste),)
         print()
         t2 = time.time()
-        print(t2 - t1)
+        #print(t2 - t1)
     else:
         return
         #
