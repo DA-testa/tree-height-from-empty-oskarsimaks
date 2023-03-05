@@ -25,7 +25,7 @@ def main():
             return
         with open(f"./test/{file}", mode="r") as file:
             n=int(file.readline())
-            parents = list(map(int, file.readline().split))
+            parents = list(map(int, file.readline().split(" ")))
         liste = [[] for i in range(n)]
         for i in range(n):
             if int(parents[i]) == -1:
