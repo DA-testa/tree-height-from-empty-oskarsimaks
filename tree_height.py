@@ -35,7 +35,7 @@ def main():
                 sakne = i
             else:
                 liste[parents[i]].append(i)
-
+        print()
         print(compute_height(sakne, liste),)
         t2 = time.time()
         #print(t2 - t1)
@@ -53,7 +53,7 @@ def main():
                 sakne = i
             else:
                 liste[split_parents[i]].append(i)
-
+        print()
         print(compute_height(sakne, liste),)
         #print()
         t2 = time.time()
