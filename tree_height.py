@@ -21,7 +21,7 @@ def main():
     # # TESTS_IR_STULBS = input()
     decis = input()
     # print()
-    if decis == "F":
+    if "F" in decis:
         file= input()
         t1 = time.time()
         if "a" in file:
@@ -41,7 +41,7 @@ def main():
         #print(t2 - t1)
         #print()
         
-    elif decis == "I":
+    elif "I" in decis:
         n = int(input())
         parents = input()
         t1 = time.time()
